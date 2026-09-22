@@ -3,7 +3,9 @@ import java.util.Scanner;
 
 public class rps {
     public static void main(String[] args) {
-Random rand = new Random();
+boolean as = true;
+        while (as == true) {
+        Random rand = new Random();
 String bot = "rock";
  int botc = rand.nextInt(1,4);
 
@@ -17,7 +19,7 @@ case 3 -> bot = "scissors";
 
 
  
- String win = "What";
+ String win = "exiting...";
         Scanner scanner = new Scanner(System.in);
  System.out.print("Do rock paper or scissors: ");
 
@@ -57,7 +59,8 @@ case "scissors" ->{
         win = "You Tied";
     } 
 }
-default -> win = "WHAT";
+case "exit" -> as = false;
+default -> win = "";
 }
 System.out.println(win);    
-}}
+}}}

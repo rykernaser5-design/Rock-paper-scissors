@@ -1,66 +1,34 @@
-import java.util.Random;
 import java.util.Scanner;
+import java.util.Random;
 
-public class rps {
+public class RPS {
     public static void main(String[] args) {
-boolean as = true;
-        while (as == true) {
-        Random rand = new Random();
-String bot = "rock";
- int botc = rand.nextInt(1,4);
-
-switch (botc) {
-case 1 -> bot = "rock";
-case 2 -> bot = "paper";
-case 3 -> bot = "scissors";
-
-}
-
-
-
- 
- String win = "exiting...";
+        Random random = new Random();
         Scanner scanner = new Scanner(System.in);
- System.out.print("Do rock paper or scissors: ");
+String player;
+        System.out.print("Choose Rock Paper or Scissors: ");
+do {
 
- String Input = scanner.next();
-
-switch (Input) {
-case "rock" -> {
-    if (bot.equals("rock")) {
-        win = "You Tied";
-    }
-     if (bot.equals("paper")) {
-        win = "You lose";
-    }
-    if (bot.equals("scissors")) {
-        win = "You Win";
-    }           
-}   
-case "paper" -> {
- if (bot.equals("rock")) {
-        win = "You Win";
-    }
-     if (bot.equals("paper")) {
-        win = "You Tied";
-    }
-    if (bot.equals("scissors")) {
-        win = "You Lose";
-    }    
-} 
-case "scissors" ->{
- if (bot.equals("rock")) {
-        win = "You Lose";
-    }
-     if (bot.equals("paper")) {
-        win = "You Win";
-    }
-    if (bot.equals("scissors")) {
-        win = "You Tied";
-    } 
+    player = scanner.nextLine();
+    if (!(player.equals("N")))        {
+            String robot;
+int robot1 = random.nextInt(1, 4);
+        if (robot1 == 1) {
+            robot = "Rock";
+        } else if (robot1 == 2) {
+            robot = "Paper";
+        } else {robot = "Scissors";}
+            System.out.println("AI choose " + robot + "!");
+if (player.equals(robot)) {
+    System.out.println("Its a tie!");
+} else if (robot.equals("Rock") && (player.equals("Paper")) || robot.equals("Paper") && (player.equals("Scissors")) || robot.equals("Scissors") && (player.equals("Rock")))
+    {
+        System.out.println("You win!");
+    } else {
+    System.out.println("You lose!");
 }
-case "exit" -> as = false;
-default -> win = "";
-}
-System.out.println(win);    
-}}}
+            System.out.print("Rock Paper or Scissors (N to stop): ");
+}} while (!(player.equals("N")));
+        System.out.println("Bye Bye!");
+scanner.close();
+    }}
